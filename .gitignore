@@ -1,0 +1,51 @@
+# ----------------------------------------------------------------
+# Credentials and Environment Configuration
+# ----------------------------------------------------------------
+.env
+*.env
+
+
+# ----------------------------------------------------------------
+# Python Virtual Environment and Dependencies
+# ----------------------------------------------------------------
+# Ignore the virtual environment folder
+.venv/
+venv/
+
+# Ignore Python caches
+**/__pycache__/
+*.pyc
+
+
+# ----------------------------------------------------------------
+# dbt Artifacts
+# ----------------------------------------------------------------
+# Ignore packages, compilation/run results, and dbt logs
+dbt_project/dbt_packages/
+dbt_project/target/
+dbt_project/logs/
+
+
+# ----------------------------------------------------------------
+# Tooling and Operating System
+# ----------------------------------------------------------------
+# Pytest
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Prefect
+prefect.db
+prefect.db-journal
+
+
+# ----------------------------------------------------------------
+# Application Logs
+# ----------------------------------------------------------------
+# Ignore all .log files inside the root logs folder
+logs/*.log
+dbt.log
+
+# Keep the 'logs' directory in the repository, even if empty
+!logs/.gitkeep

@@ -1,0 +1,11 @@
+# models/bronze/sources.yml
+version: 2
+sources:
+  - name: bronze
+    description: "Bronze layer source: Contains raw, untransformed tables from the FakeStoreAPI, loaded into the staging schema."
+    database: dbt_db
+    schema: bronze
+    tables:
+      - name: users
+      - name: products
+      - name: carts

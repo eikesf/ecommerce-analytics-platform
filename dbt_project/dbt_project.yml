@@ -1,0 +1,44 @@
+# ----------------------------------------------------------------
+# Project Information
+# ----------------------------------------------------------------
+name: 'ecommerce_analytics'
+version: '1.0.0'
+
+require-dbt-version: [">=1.10.0"]
+
+# ----------------------------------------------------------------
+# Connection Configuration
+# ----------------------------------------------------------------
+profile: 'ecommerce_analytics'
+
+# ----------------------------------------------------------------
+# Path Configuration
+# ----------------------------------------------------------------
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# ----------------------------------------------------------------
+# Model Configuration
+# ----------------------------------------------------------------
+models:
+  ecommerce_analytics:
+    bronze:
+      +schema: bronze
+      +materialized: ephemeral
+      +tags: "bronze"
+    silver:
+      +schema: silver
+      +materialized: view
+      +tags: "silver"
+    gold:
+      +schema: gold
+      +materialized: table
+      +tags: "gold"
